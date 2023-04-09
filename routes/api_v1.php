@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +19,4 @@ use Illuminate\Support\Facades\Route;
 //   return $request->user();
 // });
 
-Route::get('/test', function () {
-  return response()->json([
-    'message' => 'Endpoint Works!'
-  ], 200);
-});
+Route::get('/listings', [ListingController::class, 'index']);

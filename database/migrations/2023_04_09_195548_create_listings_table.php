@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('user_id');
             $table->string('title');
             $table->string('tags');
             $table->string('company');
@@ -23,6 +24,9 @@ return new class extends Migration
             $table->string('website');
             $table->longText('description');
             $table->timestamps();
+
+            // foreign key constraints
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('cascade');
         });
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Listing;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ListingController extends Controller
@@ -14,17 +15,10 @@ class ListingController extends Controller
      */
     public function index()
     {
-        return Listing::all();
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $listings = Listing::latest()->get();
+        return response()->json([
+            'listings' => $listings
+        ]);
     }
 
     /**
@@ -35,51 +29,110 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'company' => 'required',
+            'location' => 'required',
+            'website' => 'required',
+            'email' => 'required | email',
+            'tags' => 'required',
+            'description' => 'required',
+        ]);
+
+        $listing = Listing::create([
+            'user_id' => auth()->id(),
+            'title' => $request->title,
+            'company' => $request->company,
+            'location' => $request->location,
+            'website' => $request->website,
+            'email' => $request->email,
+            'tags' => $request->tags,
+            'description' => $request->description,
+        ]);
+
+        return response()->json([
+            'message' => 'Job Listing Created Successfully',
+            'data' => $listing
+        ], 200);
+    }
+
+    /**
+     * Display the listing for specific user
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function getUserListings()
+    {
+        $listings = Listing::where('user_id', auth()->id())->get();
+
+        return response()->json([
+            'listings' => $listings
+        ], 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Listing  $listing
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showListing(Listing $listing)
     {
-        //
-    }
+        $listingId = $listing->id;
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $jobListing = Listing::where('id', $listingId)->get();
+
+        return response()->json([
+            'listing' => $jobListing
+        ], 200);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Listing  $listing
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Listing $listing)
     {
-        //
+        Listing::where('id', $listing->id)->update([
+            'title' => $request->title ?? $listing->title,
+            'company' => $request->company ?? $listing->company,
+            'location' => $request->location ?? $listing->location,
+            'website' => $request->website ?? $listing->website,
+            'email' => $request->email ?? $listing->email,
+            'tags' => $request->tags ?? $listing->tags,
+            'description' => $request->description ?? $listing->description,
+        ]);
+
+        $listing->refresh();
+
+        return response()->json([
+            'message' => 'Successfully Updated!',
+            'listing' => $listing
+        ], 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Listing $listing 
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Listing $listing)
     {
-        //
+
+        if ($listing->user_id != auth()->id()) {
+            return response()->json([
+                'message' => 'Unauthorized Action'
+            ]);
+        }
+
+        $listing->delete();
+
+        return response()->json([
+            'message' => 'Successfully Deleted!'
+        ]);
     }
 }

@@ -32,35 +32,39 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return response()->json([
+            'user' => $user
+        ], 200);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        User::where('id', $user->id)->update([
+            'first_name' => $request->first_name ?? $user->first_name,
+            'last_name' => $request->last_name ?? $user->last_name,
+            'username' => $request->username ?? $user->username,
+            'email' => $request->email ?? $user->email,
+            'phone' => $request->phone ?? $user->phone,
+        ]);
+
+        $user->refresh();
+
+        return response()->json([
+            'message' => 'Successfully Updated!',
+            'user' => $user
+        ], 200);
     }
 
     /**

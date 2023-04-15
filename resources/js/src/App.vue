@@ -1,11 +1,18 @@
 <template>
     <div>
         <h1>Hello</h1>
+        <hero-section></hero-section>
     </div>
 </template>
 
 <script>
-export default {};
+import Hero from "./components/Hero.vue";
+
+export default {
+    components: {
+        "hero-section": Hero,
+    },
+};
 </script>
 
 <style scoped></style>

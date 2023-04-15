@@ -1,0 +1,159 @@
+/* Install the Noto-sans font type */
+@font-face {
+  font-family: 'Noto-sans';
+  src: url('./webfonts/noto-sans/NotoSans-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto-sans';
+  src: url('./webfonts/noto-sans/NotoSans-Italic.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Noto-sans';
+  src: url('./webfonts/noto-sans/NotoSans-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto-sans';
+  src: url('./webfonts/noto-sans/NotoSans-BlackItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Noto-sans';
+  src: url('./webfonts/noto-sans/NotoSans-Light.ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto-sans';
+  src: url('./webfonts/noto-sans/NotoSans-LightItalic.ttf');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Noto-sans';
+  src: url('./webfonts/noto-sans/NotoSans-Thin.ttf');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto-sans';
+  src: url('./webfonts/noto-sans/NotoSans-ThinItalic.ttf');
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Install the Roboto font type */
+@font-face{
+  font-family: 'Roboto';
+  src: url('./webfonts/roboto/Roboto-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./webfonts/roboto/Roboto-Italic.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./webfonts/roboto/Roboto-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./webfonts/roboto/Roboto-BlackItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./webfonts/roboto/Roboto-Light.ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./webfonts/roboto/Roboto-LightItalic.ttf');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./webfonts/roboto/Roboto-Thin.ttf');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./webfonts/roboto/Roboto-ThinItalic.ttf');
+  font-weight: 100;
+  font-style: italic;
+}
+
+:root {
+  --site-main-font: 'Noto-sans', 'Roboto';
+  --color-1: #4540DB;
+  --color-2: #878787;
+  --color-3: #585858;
+  --color-4: #4943DA;
+  --color-5: #FFFFFF;
+  --color-6: #000000;
+  --color-error: red;
+  --color-success: #5DBE7C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-family: var(--site-main-font);
+  font-size: 14px;
+}
+
+.text-color-1{
+  color: var(--color-1);
+}
+
+.text-color-2, .placeholder-text-color {
+  color: var(--color-2);
+}
+
+.text-color-3, .description-text-color{
+  color: var(--color-3);
+}
+
+.text-color-4 {
+  color: var(--color-4);
+}
+
+.text-white{
+  color: var(--color-5);
+}
+
+.text-black {
+  color: var(--color-6);
+}

@@ -133,3 +133,27 @@ html{
   font-family: var(--site-main-font);
   font-size: 14px;
 }
+
+.text-color-1{
+  color: var(--color-1);
+}
+
+.text-color-2, .placeholder-text-color {
+  color: var(--color-2);
+}
+
+.text-color-3, .description-text-color{
+  color: var(--color-3);
+}
+
+.text-color-4 {
+  color: var(--color-4);
+}
+
+.text-white{
+  color: var(--color-5);
+}
+
+.text-black {
+  color: var(--color-6);
+}

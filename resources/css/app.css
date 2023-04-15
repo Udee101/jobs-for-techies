@@ -134,6 +134,38 @@ html{
   font-size: 14px;
 }
 
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.text-sm {
+  font-size: 0.25rem;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
+.text-md {
+  font-size: 1.2rem;
+}
+
+.text-lg {
+  font-size: 1.5rem;
+}
+
+.text-xl {
+  font-size: 1.7rem;
+}
+
+.text-xxl {
+  font-size: 2rem;
+}
+
 .text-color-1{
   color: var(--color-1);
 }
@@ -156,4 +188,68 @@ html{
 
 .text-black {
   color: var(--color-6);
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.hero{
+  height: 100vh;
+  margin-top: 5rem;
+}
+
+nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 10px 1px whitesmoke;
+}
+
+.nav-container{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.nav-menu{
+  display: none;
+}
+
+.authenticate{
+  display: flex;
+  align-items: center;
+}
+
+.authenticate>.register{
+  margin-left: 1rem;
+  background-color: var(--color-1);
+  color: var(--color-5);
+  padding: .7rem;
+  font-weight: bold;
+  border-radius: 0.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-menu {
+    display: block;
+    width: 25%;
+  }
+  .nav-menu>ul{
+    display: flex;
+    justify-content: space-between;
+  }
 }

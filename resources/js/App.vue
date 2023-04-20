@@ -25,7 +25,7 @@ export default {
     }
   },
   mounted() {
-    if (localStorage.getItem('authenticated')) {
+    if (localStorage.getItem('jft_jwt')) {
       this.isAuth = true
     }
     else{

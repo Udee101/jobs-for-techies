@@ -7,4 +7,32 @@ const router = createRouter({
   routes
 })
 
+const invalidateJWT = () => {
+  if (localStorage.getItem('jft_jwt_creation_time') == null) {
+    localStorage.removeItem('jft_jwt');
+  }
+
+  const createdAt = parseInt(localStorage.getItem('jft_jwt_creation_time'));
+
+  const elapsedTimeInSeconds = (Date.now() - createdAt) / 1000;
+
+  if (elapsedTimeInSeconds > 600 ) {
+    localStorage.removeItem('jft_jwt');
+  }
+
+}
+
+router.beforeEach((to, from) => {
+
+  invalidateJWT()
+
+  const authenticated = localStorage.getItem('jft_jwt');
+
+  if (to.meta.guest && authenticated) {
+    return {
+      name: 'landing'
+    };
+  }
+})
+
 export default router

@@ -1,14 +1,14 @@
 import './bootstrap';
 import { createApp } from 'vue';
-import App from './src/App.vue';
-import router from './src/router';
+import App from './App.vue';
+import router from './router';
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faCircleNotch } from '@fortawesome/free-solid-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faUser);
+library.add(faUser, faCircleNotch);
 
 const app = createApp(App);
 app.use(router);

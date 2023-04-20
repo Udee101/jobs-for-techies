@@ -14,7 +14,7 @@ class AuthController extends Controller
         $request->validate([
             'first_name' => 'required|string',
             'last_name' => 'required|string',
-            'username' => 'required|string',
+            'username' => 'required|string|unique:users,username',
             'email' => 'required|string|email|unique:users,email',
             'phone' => 'required|string',
             'password' => 'required|string|confirmed'
@@ -29,7 +29,7 @@ class AuthController extends Controller
             'password' => bcrypt($request->password)
         ]);
 
-        $token = $user->createToken('jobs for techies token')->plainTextToken;
+        $token = $user->createToken('jft_token')->plainTextToken;
 
         return response()->json([
             'user' => $user,
@@ -58,7 +58,7 @@ class AuthController extends Controller
             ], 401);
         }
 
-        $token = $user->createToken('jobs for techies token')->plainTextToken;
+        $token = $user->createToken('jft_token')->plainTextToken;
 
         return response()->json([
             'message' => 'Login Successful',

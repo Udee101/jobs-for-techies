@@ -61,13 +61,20 @@ export default {
         password: this.password
       }
 
-      this.login(data).then(() => {
+      this.login(data).then((response) => {
+
+        const token = response.data.token;
+
+        localStorage.setItem('jft_jwt', token);
+        localStorage.setItem(
+          'jft_jwt_creation_time', Date.now()
+        );
+
         setTimeout(() => {
           this.isLoading = false;
           this.$router.push({name: 'landing'});
-          localStorage.setItem("authenticated", true);
           this.$emit('update-navbar');
-        }, 3000)
+        }, 2000)
 
       }).catch((error) => {
         this.isLoading = false;

@@ -15,16 +15,25 @@ const routes = [
     path: '/',
     name: 'landing',
     component: LandingPage,
+    meta: {
+      requiresAuth: false
+    }
   },
   {
     path: '/login',
     name: 'login',
     component: Login,
+    meta: {
+      guest: true
+    }
   },
   {
     path: '/register',
     name: 'register',
     component: Register,
+    meta: {
+      guest: true
+    }
   },
 ]
 

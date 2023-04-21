@@ -114,6 +114,7 @@
 
 :root {
   --site-main-font: 'Noto-sans', 'Roboto';
+  --site-bg-color-2: #F6F7FC;
   --color-1: #4540DB;
   --color-2: #878787;
   --color-3: #585858;
@@ -232,6 +233,14 @@ a{
   margin-right: 1rem;
 }
 
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
 .p-0-5 {
   margin: 0.5rem;
 }
@@ -254,10 +263,17 @@ a{
   margin-right: 1rem;
 }
 
+.pb-1{
+  padding-bottom: 1rem;
+}
+
+.pt-1 {
+  padding-top: 1rem;
+}
+
 main{
   height: 100vh;
   margin: 5rem auto 0;
-  max-width: 1200px;
 }
 
 .hover-opacity:hover{
@@ -382,6 +398,67 @@ nav{
 }
 /* Login $ Registration Form Styles end */
 
+/* styles for Hero section */
+.hero{
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: auto;
+}
+
+.hero-intro {
+  max-width: 500px;
+  margin: auto;
+  padding: 4rem 0 2rem;
+}
+
+.hero-intro>.hero-text {
+  line-height: 40px;
+}
+
+.hero-cta {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 1rem;
+  place-content: center;
+}
+
+.hero-cta>.find-jobs {
+  background-color: var(--color-1);
+  color: var(--color-5);
+  padding: .7rem;
+  border-radius: 0.2rem;
+}
+
+.hero-cta>.sign-up {
+  background-color: var(--color-5);
+  color: var(--color-1);
+  padding: .7rem;
+  font-weight: bold;
+  border: 1px solid var(--color-1);
+  border-radius: 0.2rem;
+}
+
+/*************************/
+
+.categories {
+  background-color: var(--site-bg-color-2);
+}
+
+.categories-container {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 4rem 1rem;
+}
+
+.category {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 1.2rem;
+  margin: 3rem auto;
+}
+
 @media screen and (min-width: 768px) {
   .nav-menu {
     display: block;
@@ -390,5 +467,51 @@ nav{
   .nav-menu>ul{
     display: flex;
     justify-content: space-between;
+  }
+  .hero-intro {
+    padding-top: 6rem;
+  }
+
+  .hero-intro>.hero-text {
+    font-size: 3rem;
+    line-height: 50px;
+  }
+
+  .hero-intro>.hero-sub-text {
+    line-height: 30px;
+  }
+
+  .hero-cta {
+    grid-template-columns: repeat(2, 200px);
+    column-gap: 1rem;
+  }
+
+  .category {
+    grid-template-columns: repeat(2, 300px);
+    column-gap: 1.2rem;
+    place-content: center;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .hero-intro {
+    padding-top: 7rem;
+  }
+
+  .hero-intro>.hero-text {
+    font-size: 3.5rem;
+    line-height: 60px;
+  }
+
+  .hero-intro>.hero-sub-text {
+    line-height: 35px;
+  }
+
+  .hero-cta {
+    grid-template-columns: repeat(2, 240px);
+  }
+
+  .category {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

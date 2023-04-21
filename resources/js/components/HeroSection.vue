@@ -1,5 +1,5 @@
 <template>
-  <section class="hero" id="#home">
+  <div>
     <div class="hero-intro text-center">
       <p class="hero-text text-xxl">Get The <span class="text-color-1">Right Job </span>You Deserve
       </p>
@@ -11,7 +11,7 @@
       <a href="#jobs" class="find-jobs font-bold hover-opacity" >Find Jobs</a>
       <router-link :to="{name: 'register'}" class="sign-up hover-opacity">Become a member</router-link>
     </div>
-  </section>
+</div>
 </template>
 
 <script>

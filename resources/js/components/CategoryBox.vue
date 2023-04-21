@@ -16,17 +16,4 @@
 </script>
 
 <style scoped>
-.category-box{
-  background: var(--color-5);
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  place-content: center;
-  place-items: center;
-  padding: 0.5rem;
-}
-.category-box>img{
-  width: 2.5rem;
-}
-
 </style>

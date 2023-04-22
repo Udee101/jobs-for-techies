@@ -4,11 +4,11 @@ import App from './App.vue';
 import router from './router';
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-import { faUser, faCircleNotch, faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faCircleNotch, faLocationDot, faPaperPlane, faEnvelope, faAt } from '@fortawesome/free-solid-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faUser, faCircleNotch, faLocationDot);
+library.add(faUser, faCircleNotch, faLocationDot, faPaperPlane, faEnvelope, faAt);
 
 const app = createApp(App);
 app.use(router);

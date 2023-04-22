@@ -56,7 +56,7 @@
 }
 
 /* Install the Roboto font type */
-@font-face{
+@font-face {
   font-family: 'Roboto';
   src: url('./webfonts/roboto/Roboto-Regular.ttf');
   font-weight: normal;
@@ -133,16 +133,16 @@
   padding: 0;
 }
 
-html{
+html {
   font-family: var(--site-main-font);
   font-size: 14px;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -170,15 +170,17 @@ a{
   font-size: 2rem;
 }
 
-.text-color-1{
+.text-color-1 {
   color: var(--color-1);
 }
 
-.text-color-2, .placeholder-text-color {
+.text-color-2,
+.placeholder-text-color {
   color: var(--color-2);
 }
 
-.text-color-3, .description-text-color{
+.text-color-3,
+.description-text-color {
   color: var(--color-3);
 }
 
@@ -190,15 +192,15 @@ a{
   color: var(--color-9);
 }
 
-.text-error{
+.text-error {
   color: var(--color-error);
 }
 
-.text-success{
+.text-success {
   color: var(--color-success);
 }
 
-.text-white{
+.text-white {
   color: var(--color-5);
 }
 
@@ -214,7 +216,7 @@ a{
   font-weight: 400;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
@@ -226,11 +228,11 @@ a{
   margin: 1rem;
 }
 
-.m-1-2{
+.m-1-2 {
   margin: 1.2rem;
 }
 
-.my-1{
+.my-1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -270,7 +272,7 @@ a{
   margin-right: 1rem;
 }
 
-.pb-1{
+.pb-1 {
   padding-bottom: 1rem;
 }
 
@@ -278,12 +280,12 @@ a{
   padding-top: 1rem;
 }
 
-main{
+main {
   height: 100vh;
   margin: 5rem auto 0;
 }
 
-.hover-opacity:hover{
+.hover-opacity:hover {
   opacity: 0.7;
 }
 
@@ -291,7 +293,7 @@ main{
   transform: scale(1.03);
 }
 
-nav{
+nav {
   position: fixed;
   top: 0;
   width: 100%;
@@ -304,26 +306,26 @@ nav{
   z-index: 10;
 }
 
-.nav-container{
+.nav-container {
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1.5rem;
 }
 
-.nav-menu{
+.nav-menu {
   display: none;
 }
 
-.authenticate{
+.authenticate {
   display: flex;
   align-items: center;
 }
 
-.authenticate>.register{
+.authenticate>.register {
   margin-left: 1rem;
   background-color: var(--color-1);
   color: var(--color-5);
@@ -403,14 +405,15 @@ nav{
   margin-top: 1rem;
 }
 
-.reg-success{
+.reg-success {
   text-align: center;
   margin: 0.5rem 0;
 }
+
 /* Login $ Registration Form Styles end */
 
 /* styles for Hero section */
-.hero{
+.hero {
   max-width: 1200px;
   padding: 0 1rem;
   margin: auto;
@@ -503,7 +506,7 @@ nav{
   flex-direction: row;
   gap: 1rem;
   place-items: center;
-  min-height: 120px;
+  min-height: 200px;
   border-radius: 0.5rem;
   border: 1px solid whitesmoke;
   padding: 1rem 1.5rem 1.5rem;
@@ -528,7 +531,7 @@ nav{
 
 .view-job {
   border: 1px solid var(--color-4);
-  padding: 0.25rem;
+  padding: 0.25rem 1rem;
   border-radius: 0.2rem;
   background: var(--color-7);
 }
@@ -538,10 +541,12 @@ nav{
     display: block;
     width: 25%;
   }
-  .nav-menu>ul{
+
+  .nav-menu>ul {
     display: flex;
     justify-content: space-between;
   }
+
   .hero-intro {
     padding-top: 6rem;
   }

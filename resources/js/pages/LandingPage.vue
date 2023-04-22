@@ -1,16 +1,32 @@
 <template>
-  <hero-section></hero-section>
+	<section class="hero" id="home">
+  	<hero-section></hero-section>
+	</section>
 
-	<section class="categories" id="#categories">
+	<section class="categories" id="categories">
 		<div class="categories-container">
 			<p class="text-center text-xl pb-1 section-header">Categories</p>
 				
 			<div class="category">
 				<category-box
-					v-for="category in categories" 
+					v-for="(category, index) in categories" 
 					:category="category"
-					:key="category.id"
+					:key="index"
 				></category-box>
+			</div>
+		</div>
+	</section>
+
+	<section class="featured-jobs" id="jobs">
+		<div class="feat-job-container">
+			<p class="text-center text-xl pb-1 section-header">Featured Jobs</p>
+			<div class="jobs">
+					<job-card
+						v-for="(job, index) in listings" 
+						:key="index"
+						:job="job"
+					>
+					</job-card>
 			</div>
 		</div>
 	</section>
@@ -26,11 +42,19 @@ import DesignImg from '../../img/design.svg'
 import HrImg from '../../img/hr.svg'
 import FinanceImg from '../../img/finance.svg'
 import BusinessImg from '../../img/business.svg'
+import { getJobListings } from '../api/listings'
+import JobCard from '../components/JobCard.vue';
 
 export default {
 	components: {
 		"hero-section": HeroSection,
-		"category-box": CategoryBox
+		"category-box": CategoryBox,
+		"job-card": JobCard
+	},
+	data() {
+		return {
+			listings: {}
+		}
 	},
 	setup() {
 		const categories = [
@@ -61,6 +85,17 @@ export default {
 		]
 
 		return {categories}
+	},
+	methods: {
+		getJobListings,
+	},
+	mounted() {
+		this.getJobListings().then((res) => {
+			this.listings = res.data.listings
+			console.log(this.listings);
+		}).catch((error) => {
+			console.log(error.response.data);
+		})
 	},
 };
 </script>

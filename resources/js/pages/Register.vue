@@ -2,7 +2,8 @@
   <div class="form-container">
     <div class="form-section">
       <h3 class="text-lg font-normal">Register</h3>
-      <div class="login-form">
+      <div class="register-form">
+
         <form @submit.prevent="handleSubmit">
           <div class="form-input">
             <label for="">First Name</label>

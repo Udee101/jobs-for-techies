@@ -263,13 +263,13 @@ a {
 }
 
 .py-1 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .px-1 {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .pb-1 {
@@ -608,6 +608,32 @@ nav {
   border: none;
 }
 
+footer {
+  background: var(--site-bg-color-2);
+  padding: 1rem;
+}
+
+footer>.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  place-content: center;
+}
+
+.footer-container>.other-links {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.5rem;
+}
+
+footer>hr,
+footer>.name {
+  max-width: 1200px;
+  margin: auto;
+}
+
 @media screen and (min-width: 768px) {
   .nav-menu {
     display: block;
@@ -654,6 +680,20 @@ nav {
 
   .icon>.news-letter {
     font-size: 8rem;
+  }
+
+  footer>.footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-container>.other-links {
+    grid-template-columns: repeat(5, 1fr);
+    place-items: end;
+    place-content: center;
+  }
+
+  footer>.name {
+    text-align: left;
   }
 }
 

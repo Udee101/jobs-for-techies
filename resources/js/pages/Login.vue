@@ -3,7 +3,9 @@
     <div class="form-section">
       <h3 class="text-lg font-normal">Sign In</h3>
       <div class="login-form">
-      <div v-if="invalidCredentials" class="text-center text-error">{{ invalidCredentials }}</div>
+      
+        <div v-if="invalidCredentials" class="text-center text-error">{{ invalidCredentials }}</div>
+
         <form @submit.prevent="handleSubmit">
           <div class="form-input">
             <label for="">Email or Username</label>
@@ -49,7 +51,7 @@ export default {
       isSuccessful: false,
       invalidCredentials: "",
       isLoading: false,
-      errors: {}
+      errors: {},
     }
   },
   methods: {
@@ -64,16 +66,15 @@ export default {
       this.login(data).then((response) => {
 
         const token = response.data.token;
-
+        
         localStorage.setItem('jft_jwt', token);
         localStorage.setItem(
           'jft_jwt_creation_time', Date.now()
         );
-
+        
         setTimeout(() => {
           this.isLoading = false;
           this.$router.push({name: 'landing'});
-          this.$emit('update-navbar');
         }, 2000)
 
       }).catch((error) => {

@@ -356,7 +356,7 @@ nav {
   text-align: center;
 }
 
-.login-form {
+.login-form, .register-form {
   margin: 2rem 0;
 }
 

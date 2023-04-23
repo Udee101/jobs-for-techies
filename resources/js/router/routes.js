@@ -1,6 +1,7 @@
 import Login from '../pages/Login.vue'
 import Register from '../pages/Register.vue'
 import LandingPage from '../pages/LandingPage.vue'
+import AllListings from '../pages/AllListings.vue'
 
 const routes = [
   {
@@ -34,6 +35,14 @@ const routes = [
     meta: {
       guest: true
     }
+  },
+  {
+    path: '/all-listings',
+    name: 'allListings',
+    component: AllListings,
+    // meta: {
+    //   requiresAuth: false
+    // }
   },
 ]
 

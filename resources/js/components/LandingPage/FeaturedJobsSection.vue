@@ -26,30 +26,21 @@
 
 <script>
 import JobCard from '../JobCard.vue'; 
-import { getJobListings } from '../../api/listings';
+import { mapState } from 'vuex';
+
   export default {
     components: {
       "job-card": JobCard
     },
-
-    data() {
-      return {
-        listings: {}
-      }
+    
+    created() {
+      this.$store.dispatch('jobListing/fetchJobListings')
     },
 
-    methods: {
-      getJobListings,
-    },
+    computed: mapState({
+      listings: (state) => state.jobListing.jobListings
+    })
 
-    mounted() {
-      this.getJobListings()
-        .then((res) => {
-          this.listings = res.data.listings
-        }).catch((error) => {
-          console.log(error.response.data);
-        })
-    },
   }
 </script>
 

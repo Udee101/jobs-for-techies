@@ -1,7 +1,16 @@
 <template>
-  <header>
-    <top-bar></top-bar>
-  </header>
+  <template v-if="!isAuth">
+    <header>
+      <guest-nav-bar></guest-nav-bar>
+    </header>
+  </template>
+
+  <template v-if="isAuth">
+    <header>
+      <user-nav-bar></user-nav-bar>
+    </header>
+  </template>
+
   <main>
     <router-view></router-view>
   </main>
@@ -9,10 +18,25 @@
 
 <script>
 import Topbar from "./components/Topbar.vue";
+import UserNavbar from "./components/UserNavbar.vue";
 
 export default {
   components: {
-    "top-bar": Topbar,
+    "guest-nav-bar": Topbar,
+    "user-nav-bar": UserNavbar
+  },
+  computed: {
+    isAuth(){
+      return this.$store.state.user.isUserAuth
+    },
+  },
+  created(){
+    if (localStorage.getItem('jft_jwt')) {
+      return this.$store.commit("setUserAuthTrue")
+    }
+    else {
+      return this.$store.commit("setUserAuthFalse")
+    }
   },
 };
 </script>

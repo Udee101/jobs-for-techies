@@ -10,14 +10,26 @@
 
       <div class="hero-cta text-center">
         <a href="#jobs" class="find-jobs font-bold hover-opacity" >Find Jobs</a>
-        <router-link :to="{name: 'register'}" class="sign-up hover-opacity">Become a member</router-link>
+
+        <router-link v-if="!isAuth" :to="{name: 'register'}" class="sign-up hover-opacity">Become a member</router-link>
+
+        <template v-if="isAuth">
+          <router-link :to="{name: 'allListings'}" class="sign-up hover-opacity">Post a job</router-link>
+        </template>
+
       </div>
     </div>
   </section>
 </template>
 
 <script>
-  export default {}
+  export default {
+    computed: {
+      isAuth(){
+        return this.$store.state.user.isUserAuth
+      }
+    },
+  }
 </script>
 
 <style scoped>

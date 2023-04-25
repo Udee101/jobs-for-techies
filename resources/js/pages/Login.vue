@@ -67,6 +67,7 @@ export default {
 
         const token = response.data.token;
         
+        localStorage.setItem('jft_user', JSON.stringify(response.data.user));
         localStorage.setItem('jft_jwt', token);
         localStorage.setItem(
           'jft_jwt_creation_time', Date.now()
@@ -75,6 +76,7 @@ export default {
         setTimeout(() => {
           this.isLoading = false;
           this.$router.push({name: 'landing'});
+          this.$store.commit("setUserAuthTrue")
         }, 2000)
 
       }).catch((error) => {

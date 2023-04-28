@@ -79,12 +79,8 @@ class ListingController extends Controller
      */
     public function showListing(Listing $listing)
     {
-        $listingId = $listing->id;
-
-        $jobListing = Listing::where('id', $listingId)->get();
-
         return response()->json([
-            'listing' => $jobListing
+            'listing' => $listing
         ], 200);
     }
 

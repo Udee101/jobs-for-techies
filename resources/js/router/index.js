@@ -32,6 +32,10 @@ router.beforeEach((to, from) => {
     return {
       name: 'landing'
     };
+  }else if (to.meta.requiresAuth && !authenticated) {
+    return {
+      name: 'login'
+    }
   }
 })
 

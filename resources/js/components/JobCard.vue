@@ -23,7 +23,7 @@
           </div>
         </div>
 
-        <router-link :to="{name: 'landing'}" class="text-color-4 view-job hover-opacity">View Job</router-link>
+        <router-link :to="{name: 'listing', params: { listingId: job.id }}" class="text-color-4 view-job hover-opacity">View Job</router-link>
       </div>
     </div>
   </div>

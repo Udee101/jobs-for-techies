@@ -2,4 +2,6 @@ import http from '../http';
 
 const getJobListings = () => http.get('/api/v1/listings');
 
-export { getJobListings };
+const getListing = (listingId) => http.get(`/api/v1/listings/${listingId}`)
+
+export { getJobListings, getListing };

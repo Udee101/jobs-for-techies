@@ -35,9 +35,4 @@ import { mapState } from 'vuex';
 </script>
 
 <style scoped>
-
-
-@media screen and (min-width: 768px) {
-  
-}
 </style>

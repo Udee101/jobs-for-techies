@@ -17,8 +17,11 @@ class ListingController extends Controller
     public function index()
     {
         $listings = Listing::latest()->get();
+        $jobCount = $listings->count();
+
         return response()->json([
-            'listings' => $listings
+            'listings' => $listings,
+            'job_count' => $jobCount
         ]);
     }
 

@@ -7,11 +7,11 @@
 
       <div class="nav-menu">
         <ul>
-          <a href="#home" class="text-color-3"><li>Home</li></a>
-          <a href="categories" class="text-color-3"
-            ><li>Categories</li></a
-          >
-          <a href="jobs" class="text-color-3"><li>Jobs</li></a>
+          <router-link :to="{name: 'allListings'}" class="text-color-3 hover-opacity mr-1">Jobs</router-link>
+
+          <router-link :to="{name: 'manageListings'}" class="text-color-3 hover-opacity mr-1">Manage Jobs</router-link>
+
+          <router-link :to="{name: 'profile'}" class="text-color-3 hover-opacity">Profile</router-link>
         </ul>
       </div>
 

@@ -3,6 +3,8 @@ import Register from '../pages/Register.vue'
 import LandingPage from '../pages/LandingPage.vue'
 import AllListings from '../pages/AllListings.vue'
 import JobListing from '../pages/JobListing.vue'
+import UserProfile from '../pages/Profile.vue'
+import ManageListings from '../pages/ManageListings.vue'
 
 const routes = [
   {
@@ -51,6 +53,22 @@ const routes = [
     component: JobListing,
     meta: {
       requiresAuth: true
+    }
+  },
+  {
+    path: '/manage-listings',
+    name: 'manageListings',
+    component: ManageListings,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: UserProfile,
+    meta: {
+      requiresAuth: false
     }
   },
 

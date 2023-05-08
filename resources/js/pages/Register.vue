@@ -68,7 +68,7 @@
           </div>
 
           <div class="back-home">
-            <router-link :to="{name: 'landing'}" class="text-color-3 hover-opacity">Go back home</router-link>
+            <a href="/" class="text-color-3 hover-opacity">Go back home</a>
           </div>
         </form>
       </div>
@@ -100,7 +100,8 @@ export default {
     handleSubmit(){
 
       this.isLoading = true;
-
+      this.errors = {};
+      
       const data = {
         first_name: this.first_name,
         middle_name: this.middle_name,

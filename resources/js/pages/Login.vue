@@ -32,7 +32,7 @@
           </div>
 
           <div class="back-home">
-            <router-link :to="{name: 'landing'}" class="text-color-3 hover-opacity">Go back home</router-link>
+            <a href="/" class="text-color-3 hover-opacity">Go back home</a>
           </div>
         </form>
       </div>

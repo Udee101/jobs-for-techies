@@ -1,12 +1,12 @@
 <template>
-  <template v-if="!isAuth">
-    <header>
+  <template v-if="!isNoNavRoute">
+    <header v-if="!isAuth">
       <guest-nav-bar></guest-nav-bar>
     </header>
   </template>
 
-  <template v-if="isAuth">
-    <header>
+  <template v-if="!isNoNavRoute">
+    <header v-if="isAuth">
       <user-nav-bar></user-nav-bar>
     </header>
   </template>
@@ -29,6 +29,12 @@ export default {
     isAuth(){
       return this.$store.state.user.isUserAuth
     },
+    isNoNavRoute(){
+      return [
+        'login',
+        'register'
+      ].includes(this.$route.name);
+    }
   },
   created(){
     if (localStorage.getItem('jft_jwt')) {
@@ -38,6 +44,7 @@ export default {
       return this.$store.commit("setUserAuthFalse")
     }
   },
+  
 };
 </script>
 

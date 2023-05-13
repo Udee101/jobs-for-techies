@@ -148,6 +148,23 @@ a {
   text-decoration: none;
 }
 
+table {
+  width: 100%;
+  text-align: left;
+  border-spacing: 0;
+  border-spacing: 0.1rem;
+}
+
+th,
+td {
+  padding: 1rem;
+}
+
+tr:nth-child(even),
+th {
+  background: whitesmoke;
+}
+
 .text-sm {
   font-size: 0.85rem;
 }
@@ -308,6 +325,14 @@ main {
 
 .scale:hover {
   transform: scale(1.03);
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 nav {
@@ -770,6 +795,12 @@ footer>.name {
   grid-template-rows: auto;
   row-gap: 1rem;
   padding: 2rem 0 5rem;
+}
+
+.manage-jobs-container {
+  max-width: 1200px;
+  margin: 6rem auto 5rem;
+  padding: 1rem;
 }
 
 @media screen and (min-width: 768px) {

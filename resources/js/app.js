@@ -5,11 +5,11 @@ import App from './App.vue';
 import router from './router';
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-import { faUser, faCircleNotch, faLocationDot, faPaperPlane, faEnvelope, faAt, faClockRotateLeft, faArrowLeftLong, faGlobe, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faCircleNotch, faLocationDot, faPaperPlane, faEnvelope, faAt, faClockRotateLeft, faArrowLeftLong, faGlobe, faMagnifyingGlass, faPenToSquare, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faUser, faCircleNotch, faLocationDot, faPaperPlane, faEnvelope, faAt, faClockRotateLeft, faArrowLeftLong, faGlobe, faMagnifyingGlass);
+library.add(faUser, faCircleNotch, faLocationDot, faPaperPlane, faEnvelope, faAt, faClockRotateLeft, faArrowLeftLong, faGlobe, faMagnifyingGlass, faPenToSquare, faTrashAlt);
 
 const app = createApp(App);
 app.use(router);

@@ -155,9 +155,9 @@ table {
   border-spacing: 0.1rem;
 }
 
-th,
-td {
-  padding: 1rem;
+table th,
+table td {
+  padding: 0.55rem;
 }
 
 tr:nth-child(even),
@@ -464,7 +464,7 @@ nav {
 .hero-intro {
   max-width: 500px;
   margin: auto;
-  padding: 4rem 0 2rem;
+  padding: 10rem 0 2rem;
 }
 
 .hero-intro>.hero-text {
@@ -799,7 +799,7 @@ footer>.name {
 
 .manage-jobs-container {
   max-width: 1200px;
-  margin: 6rem auto 5rem;
+  margin: 7rem auto 5rem;
   padding: 1rem;
 }
 
@@ -812,10 +812,6 @@ footer>.name {
   .nav-menu>ul {
     display: flex;
     justify-content: space-between;
-  }
-
-  .hero-intro {
-    padding-top: 6rem;
   }
 
   .hero-intro>.hero-text {
@@ -906,10 +902,6 @@ footer>.name {
 }
 
 @media screen and (min-width: 900px) {
-  .hero-intro {
-    padding-top: 7rem;
-  }
-
   .hero-intro>.hero-text {
     font-size: 3.5rem;
     line-height: 60px;

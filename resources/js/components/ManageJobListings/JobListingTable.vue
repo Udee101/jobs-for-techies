@@ -1,6 +1,6 @@
 <template>
   <table>
-    <thead class="text-md text-color-3">
+    <thead>
       <tr>
         <th>#</th>
         <th>Title</th>
@@ -26,15 +26,11 @@ import { mapState } from 'vuex'
 import JobListingTableRow from './JobListingTableRow.vue';
 export default {
   components: {
-    "jobs-table-row": JobListingTableRow
+    "jobs-table-row": JobListingTableRow,
   },
 
   created() {
     this.$store.dispatch("jobListing/fetUserJobListings")
-  },
-
-  components:{
-    "jobs-table-row": JobListingTableRow
   },
 
   computed: {
@@ -45,4 +41,5 @@ export default {
 };
 </script>
 
-<style ></style>
+<style>
+</style>

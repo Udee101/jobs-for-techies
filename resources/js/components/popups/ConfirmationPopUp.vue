@@ -8,7 +8,7 @@
         <button 
           class="mt-1 yes font-bold text-white cursor-pointer hover-opacity"
           @click="$emit('delete')"
-        > Yes
+        > Proceed
         </button>
         <button 
           class="mt-1 cancel font-bold text-white cursor-pointer hover-opacity"
@@ -22,27 +22,23 @@
 
 <script>
 export default {
-  created() {},
-  data() {
-    return {};
-  },
   props: {
     confirmationText: {
       type: String,
     }
   },
-  methods: {},
 };
 </script>
 
 <style scoped>
 .confirm-pop-up{
   background: white;
-  width: 75%;
-  max-width: 300px;
+  width: 80%;
+  max-width: 350px;
   min-height: 120px;
   border-radius: 0.5rem;
   padding: 2rem;
+  box-shadow: 0 0 1.5rem grey;
 }
 .cta-confirm{
   display: flex;
@@ -50,6 +46,8 @@ export default {
   gap: 1.5rem;
 }
 .cta-confirm>button{
+  display: flex;
+  place-content: center;
   padding: 1rem 2rem;
   width: 100px;
   border: none;

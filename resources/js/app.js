@@ -15,4 +15,7 @@ const app = createApp(App);
 app.use(router);
 app.use(store);
 app.component('f-a-i', FontAwesomeIcon);
+
+app.config.globalProperties.$_ = _
+
 app.mount('#app');

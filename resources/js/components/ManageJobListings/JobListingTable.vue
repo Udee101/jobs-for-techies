@@ -11,6 +11,7 @@
     </thead>
     <tbody class="text-color-3">
       <jobs-table-row
+        v-if="!$_.isEmpty(listings)"
         v-for="(listing, index) in listings"
         :listing="listing"
         :index="index"
@@ -19,6 +20,9 @@
       </jobs-table-row>
     </tbody>
   </table>
+  <div v-if="$_.isEmpty(listings)" class="text-center text-color-3 my-1">
+    <em>No Job(s) Found</em>
+  </div>
 </template>
 
 <script>

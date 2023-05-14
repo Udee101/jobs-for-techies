@@ -1,15 +1,25 @@
 <template>
-  <div>
-    Manage listings
+  <div class="manage-jobs-wrapper">
+    <div class="manage-jobs-container">
+      <div class="page-title my-1">
+        <p class="text-xxl text-center">Manage Jobs</p>
+      </div>
+
+      <div class="overflow-x-auto py-1">
+        <job-listing-table></job-listing-table>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  export default {
-    
+import JobListingTable from '../components/ManageJobListings/JobListingTable.vue';
+export default {
+  components: {
+    "job-listing-table": JobListingTable
   }
+}
 </script>
 
-<style scoped>
-
+<style>
 </style>

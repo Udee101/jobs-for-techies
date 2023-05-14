@@ -10,10 +10,9 @@
       <user-nav-bar></user-nav-bar>
     </header>
   </template>
-
-  <main>
-    <router-view></router-view>
-  </main>
+  
+  <router-view></router-view>
+  
 </template>
 
 <script>

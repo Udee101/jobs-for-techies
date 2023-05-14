@@ -148,6 +148,29 @@ a {
   text-decoration: none;
 }
 
+table {
+  width: 100%;
+}
+
+table th,
+table td {
+  text-align: start;
+  padding: 0.7rem;
+}
+
+tr:nth-child(even),
+th {
+  background: whitesmoke;
+}
+
+tr:nth-child(odd){
+  background: rgba(251, 251, 251, 0.58);
+}
+
+textarea{
+  font-family: var(--site-main-font);
+}
+
 .text-sm {
   font-size: 0.85rem;
 }
@@ -310,6 +333,14 @@ main {
   transform: scale(1.03);
 }
 
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -377,7 +408,7 @@ nav {
   margin: 2rem 0;
 }
 
-.form-input {
+.form-input, .form-group {
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
@@ -439,7 +470,7 @@ nav {
 .hero-intro {
   max-width: 500px;
   margin: auto;
-  padding: 4rem 0 2rem;
+  padding: 10rem 0 2rem;
 }
 
 .hero-intro>.hero-text {
@@ -772,6 +803,80 @@ footer>.name {
   padding: 2rem 0 5rem;
 }
 
+.manage-jobs-container {
+  max-width: 1200px;
+  margin: 7rem auto 5rem;
+  padding: 1rem;
+}
+
+.pop-up-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(128, 128, 128, 0.446);
+}
+
+.pop-up-container>.pop-up-box {
+  max-width: 500px;
+  width: 90%;
+  height: 90%;
+  position: fixed;
+  background: white;
+  border-radius: 0.5rem;
+}
+
+.pop-up-box>.pop-up-content {
+  overflow-y: auto;
+  height: 85%;
+  padding: 0 1rem 1rem;
+  margin-top: 2.5rem;
+}
+
+.pop-up-content>.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.header>.icon {
+  justify-self: end;
+}
+
+.pop-up-content>form {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.form-group>label {
+  padding: 0.5rem 0;
+}
+
+.form-group>input,
+.form-group>textarea {
+  min-height: 40px;
+  border-radius: 0.25rem;
+  border: 1px solid var(--color-2);
+  outline: none;
+  padding: 0 0.5rem;
+}
+
+.form-group>textarea {
+  resize: none;
+  padding: 0.5rem;
+}
+
+.btn-edit {
+  background: var(--color-4);
+  border: none;
+  border-radius: 0.25rem;
+  padding: 1rem 2rem;
+}
+
 @media screen and (min-width: 768px) {
   .nav-menu {
     display: block;
@@ -781,10 +886,6 @@ footer>.name {
   .nav-menu>ul {
     display: flex;
     justify-content: space-between;
-  }
-
-  .hero-intro {
-    padding-top: 6rem;
   }
 
   .hero-intro>.hero-text {
@@ -875,10 +976,6 @@ footer>.name {
 }
 
 @media screen and (min-width: 900px) {
-  .hero-intro {
-    padding-top: 7rem;
-  }
-
   .hero-intro>.hero-text {
     font-size: 3.5rem;
     line-height: 60px;

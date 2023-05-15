@@ -60,7 +60,7 @@ const routes = [
     name: 'manageListings',
     component: ManageListings,
     meta: {
-      requiresAuth: false
+      requiresAuth: true
     }
   },
   {

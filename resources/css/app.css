@@ -448,27 +448,32 @@ nav {
 /* Login & Registration Form Styles start */
 .form-container {
   display: flex;
-  flex-direction: column;
   width: 100%;
   padding: 2rem 0;
-  transform: translateY(80px);
-  place-items: center;
+  place-content: center;
+  transform: translateY(50px);
 }
 
-.form-section {
+.form-section, .reg-form-section {
+  max-width: 400px;
   width: 80%;
   min-height: 300px;
   padding: 1.5rem;
   border: 1px solid whitesmoke;
   border-radius: 0.5rem;
+  box-shadow: 0rem 5px 10px 5px rgba(245, 245, 245, 0.312);
 }
 
-.form-section>h3 {
-  text-align: center;
+.reg-form-section{
+  max-width: 800px;
 }
 
+.logo>img{
+  width: 160px;
+  padding-top: 1rem;;
+}
 .login-form, .register-form {
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 
 .form-input, .form-group {
@@ -478,14 +483,14 @@ nav {
 }
 
 .form-input>label {
-  font-size: 1.2rem;
-  margin: 0 0 0.2rem;
+  margin: 0 0 0.5rem;
 }
 
 .form-input>input {
   min-height: 30px;
   border: 1px solid whitesmoke;
   border-radius: 0.2rem;
+  outline: none;
 }
 
 .form-input>input[placeholder] {
@@ -504,9 +509,10 @@ nav {
   background: var(--color-1);
   color: var(--color-5);
   border: none;
-  padding: 0.7rem;
+  padding: 1rem;
+  max-width: 320px;
   width: 100%;
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 
@@ -1001,6 +1007,13 @@ footer>.name {
 
   .hamburger {
     display: none;
+  }
+
+  .form-input-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    column-gap: 1rem;
   }
 
   .hero-intro>.hero-text {

@@ -1,7 +1,11 @@
 <template>
   <div class="form-container">
     <div class="form-section">
-      <h3 class="text-lg font-normal">Sign In</h3>
+      <div class="text-center logo my-1">
+        <img :src="LogoImg" alt="logo image">
+      </div>
+        <p class="font-normal text-center text-lg">Log in to your Account</p>
+        <p class="font-normal text-center text-color-3">Welcome back, Please enter your details</p>
       <div class="login-form">
       
         <div v-if="invalidCredentials" class="text-center text-error">{{ invalidCredentials }}</div>
@@ -24,7 +28,7 @@
           </div>
 
           <div v-if="isLoading" class="text-center my-1">
-            <f-a-i icon="fas fa-circle-notch" spin size="xl" class="text-color-1" />
+            <f-a-i icon="fas fa-circle-notch" spin size="2xl" class="text-color-1 mt-1" />
           </div>
 
           <div class="back-home text-color-6">
@@ -43,9 +47,12 @@
 
 <script>
 import { login } from "../api/auth";
+import LogoImg from '../../img/logo.svg'
+
 export default {
   data() {
     return{
+      LogoImg,
       loginField: "",
       password: "",
       isSuccessful: false,

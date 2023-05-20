@@ -15,7 +15,7 @@
         </ul>
       </div>
 
-      <div class="user text-md">
+      <div class="user">
         {{ $_.lowerCase(getUsername) }} <f-a-i icon="fas fa-user" class="text-color-1" />
       </div>
 

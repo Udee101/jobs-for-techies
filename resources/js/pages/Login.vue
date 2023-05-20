@@ -75,7 +75,7 @@ export default {
         
         setTimeout(() => {
           this.isLoading = false;
-          this.$router.push({name: 'landing'});
+          this.$router.push({name: 'allListings'});
           this.$store.commit("setUserAuthTrue")
         }, 2000)
 

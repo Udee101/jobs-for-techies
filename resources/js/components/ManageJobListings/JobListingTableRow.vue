@@ -8,21 +8,27 @@
   
   <confirmation-pop-up 
     v-if="showConfirm" 
-    :confirmationText="'Are you sure you want to delete this job?'"
+    :confirmationText="'Are you sure you want to delete this job'"
+    :action="'proceed'"
     @close="showConfirm = false"
-    @delete="deleteJob"
+    @proceed="deleteJob"
   >
   </confirmation-pop-up>
   <tr>
     <td>{{ index + 1 }}</td>
     <td>{{ listing.title }}</td>
     <td>{{ listing.company }}</td>
-    <td @click="showModal = true">
-      <p class="edit text-center text-color-4 cursor-pointer hover-opacity">Edit</p>
+    <td>
+      <p 
+        @click="showModal = true"
+        class="edit text-center text-color-4 cursor-pointer hover-opacity"
+      >Edit
+      </p>
     </td>
-    <td @click="showConfirm = true" class="text-center">
+    <td class="text-center">
       <p 
         v-if="!isLoading" 
+        @click="showConfirm = true"
         class="delete text-center text-error cursor-pointer hover-opacity"
       > Delete
       </p>

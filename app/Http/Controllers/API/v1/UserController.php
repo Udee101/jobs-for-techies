@@ -54,6 +54,7 @@ class UserController extends Controller
         User::where('id', $user->id)->update([
             'first_name' => $request->first_name ?? $user->first_name,
             'last_name' => $request->last_name ?? $user->last_name,
+            'middle_name' => $request->middle_name ?? $user->middle_name,
             'username' => $request->username ?? $user->username,
             'email' => $request->email ?? $user->email,
             'phone' => $request->phone ?? $user->phone,

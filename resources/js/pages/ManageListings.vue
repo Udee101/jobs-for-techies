@@ -1,6 +1,6 @@
 <template>
   <div class="manage-jobs-wrapper">
-    <div class="manage-jobs-container">
+    <div class="page-container">
       <div class="page-title my-1">
         <p class="text-xxl text-center">Manage Jobs</p>
       </div>

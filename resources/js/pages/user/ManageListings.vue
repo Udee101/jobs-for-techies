@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import JobListingTable from '../components/ManageJobListings/JobListingTable.vue';
+import JobListingTable from '../../components/ManageJobListings/JobListingTable.vue';
 export default {
   components: {
     "job-listing-table": JobListingTable

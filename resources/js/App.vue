@@ -17,7 +17,7 @@
 
 <script>
 import Topbar from "./components/Topbar.vue";
-import UserNavbar from "./components/UserNavbar.vue";
+import UserNavbar from "./components/user/UserNavbar.vue";
 
 export default {
   components: {

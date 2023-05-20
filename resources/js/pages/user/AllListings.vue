@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Banner from '../components/AllJobListings/Banner.vue';
-import JobCard from '../components/JobCard.vue';
+import Banner from '../../components/AllJobListings/Banner.vue';
+import JobCard from '../../components/JobCard.vue';
 import { mapState } from 'vuex';
 
   export default {

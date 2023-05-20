@@ -824,11 +824,10 @@ footer>.name {
 
 .pop-up-container>.pop-up-box {
   max-width: 500px;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   position: fixed;
   background: white;
-  border-radius: 0.5rem;
 }
 
 .pop-up-box>.pop-up-content {

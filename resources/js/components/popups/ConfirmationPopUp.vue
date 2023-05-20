@@ -2,13 +2,13 @@
   <div class="pop-up-container">
     <div class="confirm-pop-up">
       <div class="text-lg text-center my-1">
-        {{ confirmationText }}
+        {{ confirmationText }}?
       </div>
       <div class="cta-confirm text-center">
         <button 
           class="mt-1 yes font-bold text-white cursor-pointer hover-opacity"
-          @click="$emit('delete')"
-        > Proceed
+          @click="$emit(action)"
+        > {{ $_.startCase(action) }}
         </button>
         <button 
           class="mt-1 cancel font-bold text-white cursor-pointer hover-opacity"
@@ -24,6 +24,9 @@
 export default {
   props: {
     confirmationText: {
+      type: String,
+    },
+    action: {
       type: String,
     }
   },

@@ -1,4 +1,4 @@
-import { getUser } from "../../api/user";
+import { getUser, updateUser } from "../../api/user";
 
 const state = () => ({
   user: {},
@@ -23,6 +23,13 @@ const actions = {
 
     commit('setUser', { user: user.data.user })
   },
+  async modifyUser({ commit }, data) {
+
+    return updateUser(data)
+    .then(res => {
+        commit('setUser', { user: res.data.user })
+      }).catch(err => console.log(err.response))
+  }
 }
 
 export default {

@@ -7,7 +7,7 @@
           <f-a-i 
             icon="fas fa-times" 
             size="xl" 
-            class="icon cursor-pointer hover-opacity text-error" 
+            class="icon cursor-pointer hover-opacity" 
             @click="$emit('close')"
           />
         </div>

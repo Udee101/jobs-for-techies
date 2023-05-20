@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import { getListing } from '../api/listings';
-import JobDescription from '../components/JobDescription/JobDescription.vue';
+import { getListing } from '../../api/listings';
+import JobDescription from '../../components/JobDescription/JobDescription.vue';
   export default {
     components: {
       "job-details": JobDescription

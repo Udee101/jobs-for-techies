@@ -2,7 +2,8 @@ import { getUser, updateUser } from "../../api/user";
 
 const state = () => ({
   user: {},
-  isUserAuth: false
+  isUserAuth: false,
+  userNav: false
 })
 
 const mutations = {
@@ -14,7 +15,13 @@ const mutations = {
   },
   setUserAuthFalse(state) {
     state.isUserAuth = false
-  }
+  },
+  setUserNavOpen(state) {
+    state.userNav = true 
+  },
+  setUserNavClose(state) {
+    state.userNav = false 
+  },
 }
 
 const actions = {

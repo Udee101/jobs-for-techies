@@ -1,10 +1,10 @@
 import Login from '../pages/Login.vue'
 import Register from '../pages/Register.vue'
 import LandingPage from '../pages/LandingPage.vue'
-import AllListings from '../pages/AllListings.vue'
-import JobListing from '../pages/JobListing.vue'
-import UserProfile from '../pages/Profile.vue'
-import ManageListings from '../pages/ManageListings.vue'
+import AllListings from '../pages/user/AllListings.vue'
+import JobListing from '../pages/user/JobListing.vue'
+import UserProfile from '../pages/user/Profile.vue'
+import ManageListings from '../pages/user/ManageListings.vue'
 
 const routes = [
   {

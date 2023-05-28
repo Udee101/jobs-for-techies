@@ -52,14 +52,6 @@ export default {
     "edit-listing-pop-up": EditListingPopUp,
     "confirmation-pop-up": ConfirmationPopUp
   },
-  props: {
-    listing: {
-      type: Object
-    },
-    index: {
-      type: Number
-    }
-  },
   data() {
     return {
       showModal: false,
@@ -82,6 +74,14 @@ export default {
       }).catch((err) => console.log(err.response))
     }
   },
+  props: {
+    listing: {
+      type: Object
+    },
+    index: {
+      type: Number
+    }
+  },
 };
 </script>
 
@@ -89,6 +89,8 @@ export default {
 td>.edit, td>.delete{
   border-radius: 0.2rem;
   padding: 0.1rem 0.5rem;
+  width: 50px;
+  margin-inline: auto;
 }
 td>.edit{
   border: 1px solid var(--color-4);

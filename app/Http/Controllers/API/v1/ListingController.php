@@ -34,13 +34,13 @@ class ListingController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'company' => 'required',
-            'location' => 'required',
-            'website' => 'required',
-            'email' => 'required | email',
-            'tags' => 'required',
-            'description' => 'required',
+            'title' => 'required|string',
+            'company' => 'required|string',
+            'location' => 'required|string',
+            'website' => 'required|string',
+            'email' => 'required|email',
+            'tags' => 'required|string',
+            'description' => 'required|string',
         ]);
 
         $listing = Listing::create([

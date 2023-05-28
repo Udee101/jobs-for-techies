@@ -7,7 +7,7 @@
       </div>
 
       <div class="detail-wrapper">
-        <p class="comp-title text-lg mb-0-5">{{ job.title }}</p>
+        <p class="comp-title text-md mb-0-5">{{ job.title }}</p>
 
         <div class="job-type">
           <p class="type text-base">Fulltime.</p>

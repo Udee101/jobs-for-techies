@@ -1,7 +1,7 @@
 <template>
   <div class="all-listings-wrapper">
     <page-banner></page-banner>
-    <section class="all-listings-container p-1">
+    <section class="all-listings-container">
       <job-card
         v-for="(job, index) in listings" 
         :key="index"

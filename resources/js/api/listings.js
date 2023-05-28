@@ -1,6 +1,8 @@
 import http from '../http';
 import { getHeader } from './config';
 
+const createJobListing = (data) => http.post('api/v1/listings/create', data, getHeader())
+
 const getJobListings = () => http.get('/api/v1/listings');
 
 const getListing = (listingId) => http.get(`/api/v1/listings/${listingId}`);
@@ -11,4 +13,4 @@ const updateJobListing = (payload) => http.put(`/api/v1/user/listings/${payload.
 
 const deleteJobListing = (listingId) => http.delete(`/api/v1/user/listings/${listingId}`, getHeader())
 
-export { getJobListings, getListing, getUserListings, updateJobListing, deleteJobListing };
+export {createJobListing, getJobListings, getListing, getUserListings, updateJobListing, deleteJobListing };
